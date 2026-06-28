@@ -101,7 +101,7 @@
   .env.open .flap{transform:rotateX(-178deg);z-index:0}
   .env.open .letter{transform:translateY(-58%) scale(1.06)}
 
-  .hint{font-size:clamp(16px,4vw,20px);color:#ffe7f1;text-shadow:0 2px 12px rgba(0,0,0,.5);
+  .hint{font-size:clamp(20px,5.5vw,28px);color:#ffe7f1;text-shadow:0 2px 12px rgba(0,0,0,.5);
     animation:hintPulse 1.8s ease-in-out infinite;z-index:1}
   @keyframes hintPulse{0%,100%{opacity:.65;transform:translateY(0)}50%{opacity:1;transform:translateY(-4px)}}
 
@@ -148,7 +148,7 @@
       <path d="M50,72 C50,72 26,56 26,40 C26,31 33,27 39,27 C45,27 50,33 50,38 C50,33 55,27 61,27 C67,27 74,31 74,40 C74,56 50,72 50,72 Z" fill="#fff" opacity=".92"/>
     </svg>
   </div>
-  <div class="hint" id="hint">กดที่ซองสิ 💌</div>
+  <div class="hint" id="hint"></div>
 </div>
 
 <div id="flash"></div>
@@ -157,13 +157,17 @@
 /* ===== ★ ตั้งค่า — แก้ข้อความ / รูป ★ ===== */
 const TITLE = "เค้ามาง้อๆน้า เบ้บ";
 const SUB   = "เบ้บเค้ารักเบ้บมากๆ เลยนะ รักที่สุดในโลกเลยยยยย ถึงเมื่อคืนจะ ไม่ได้ บอกฝันดีจิงแล้ว เค้าแกล้งเบ้บเฉยๆ มาทำอะไรเซอร์ไพร้ เล็กๆ แหะๆ💖";
+const HINT  = "กดที่ซองสิ 💌";
 /* ขนาดตัวอักษร: พิมพ์แค่ตัวเลข (หน่วย pt) — ใส่ 0 เพื่อใช้ขนาดอัตโนมัติตามจอ */
 const TITLE_SIZE = 72;   // เช่น 32 = 32pt
 const SUB_SIZE   = 32;   // เช่น 16 = 16pt
+const HINT_SIZE  = 32;   // เช่น 20 = 20pt — ขนาดตัวอักษร "กดที่ซองสิ"
 document.getElementById('title').textContent = TITLE;
 document.getElementById('sub').textContent   = SUB;
+document.getElementById('hint').textContent  = HINT;
 if (TITLE_SIZE > 0) document.getElementById('title').style.fontSize = TITLE_SIZE + 'pt';
 if (SUB_SIZE   > 0) document.getElementById('sub').style.fontSize   = SUB_SIZE + 'pt';
+if (HINT_SIZE  > 0) document.getElementById('hint').style.fontSize  = HINT_SIZE + 'pt';
 /* เปลี่ยนรูปพื้นหลัง: แทนไฟล์ bg.jpg (แนวนอน ความละเอียดสูง) */
 
 /* โหลดรูป + กันแคช */
