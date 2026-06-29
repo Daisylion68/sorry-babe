@@ -188,12 +188,15 @@ addEventListener('mouseleave',()=>{mx=0;my=0;});
 const intro=document.getElementById('intro'), env=document.getElementById('env'),
       flash=document.getElementById('flash'), hint=document.getElementById('hint');
 let opened=false;
+const cardSound=new Audio('card.mp3');
+const bgMusic=new Audio('music.mp3'); bgMusic.loop=true;
 function openEnvelope(){
   if(opened)return; opened=true;
   env.classList.add('open');
   hint.style.opacity=0;
+  cardSound.play();
   setTimeout(()=>flash.classList.add('go'), 950);     // แฟลชนุ่ม
-  setTimeout(()=>{ intro.classList.add('gone'); document.body.classList.add('entered'); }, 1250);
+  setTimeout(()=>{ intro.classList.add('gone'); document.body.classList.add('entered'); bgMusic.play(); }, 1250);
   setTimeout(()=>{ intro.style.display='none'; }, 2100);
 }
 intro.addEventListener('click', openEnvelope);
