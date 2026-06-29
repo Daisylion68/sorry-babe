@@ -195,8 +195,9 @@ function openEnvelope(){
   env.classList.add('open');
   hint.style.opacity=0;
   cardSound.play();
+  bgMusic.play().catch(()=>{});   // เล่นพร้อม gesture เดียวกัน กัน Safari บล็อก autoplay
   setTimeout(()=>flash.classList.add('go'), 950);     // แฟลชนุ่ม
-  setTimeout(()=>{ intro.classList.add('gone'); document.body.classList.add('entered'); bgMusic.play(); }, 1250);
+  setTimeout(()=>{ intro.classList.add('gone'); document.body.classList.add('entered'); }, 1250);
   setTimeout(()=>{ intro.style.display='none'; }, 2100);
 }
 intro.addEventListener('click', openEnvelope);
